@@ -11,6 +11,7 @@ size = 9;
 
 for (let i = 0; i <= size; i++){
     const nums = document.createElement("button");
+    
     nums.textContent = i;
     nums.style.width = "100px";
     nums.style.height = "50px";
