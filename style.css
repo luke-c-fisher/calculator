@@ -12,11 +12,7 @@
     height: 500px;
 }
 
-.items {
-    flex: 1;
-    border: 2px solid black;
-    align-self: flex-end;
-}
+
 
 /* The goal of the following CSS is to separate the numerical buttons from
 the operators and the entry bar by cutting the calculator container in half */
