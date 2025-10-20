@@ -8,10 +8,6 @@
 // are contained within the calculator parent container
 
 
-
-
-
-
 const add = function(a, b) {
 	let sum = a + b; 
     return sum;
@@ -22,14 +18,22 @@ const subtract = function(a, b) {
   return result;
 };
 
-const sum = function(arr) {
-    let sum = arr.reduce((a, b) => a + b, 0);
-    return sum;
-};
-
-const multiply = function(arr) {
-  let product = arr.reduce((a, b) => a * b);
+const multiply = function(a, b) {
+  let product = a * b;
   return product;
 };
 
+const divide = function() {
+  let quotient = b / a;
+  return quotient;
+}
+
+
+function operate(opp, a, b) {
+  if (opp === +){
+    return add(a,b);
+  }
+}
+
+console.log(operate(+, 2, 5));
 
