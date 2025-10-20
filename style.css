@@ -4,6 +4,8 @@
 }
 
 .container {
+    display: flex;
+    align-items: flex-end;
     background-color: darkgrey;
     border-radius: 4px;
     margin: 0 auto;
@@ -13,15 +15,12 @@
 
 .key-container {
     display: flex;
-    align-items: flex-end;
+    flex: 1;
     gap: 10px;
-    height: 250px;
+    height: 375px;
     border: 2px solid black;
 }
 
-.key-container#keys {
-    flex: 1;
-}
 
 
 
