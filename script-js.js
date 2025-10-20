@@ -1,13 +1,18 @@
-const calculator = document.querySelector(".parent-div");
+const calculator = document.querySelector(".container");
 
 // const calcButtons = document.getElementById("buttons");
 
-size = 18
+size = 9;
+
+// The following code is meant to display buttons on a calculator
+// The idea is to create a set of dynamically created divs that 
+// are contained within the calculator parent container
 
 for (let i = 0; i <= size; i++){
-    const divs = document.createElement("div")
+    const nums = document.createElement("div");
+    nums.textContent = i;
     
-    calculator.appendChild(divs)
+    calculator.appendChild(nums);
 }
 
 

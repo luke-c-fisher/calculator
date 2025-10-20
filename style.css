@@ -3,9 +3,18 @@
     display: flex;
 }
 
-.parent-div {
+.container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    background-color: darkgrey;
     width: 500px;
     height: 500px;
+}
+
+.container > * {
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: white;
+    gap: 5px;
 }
