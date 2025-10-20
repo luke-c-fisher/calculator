@@ -1,4 +1,5 @@
 const calculator = document.querySelector(".container");
+const items = document.querySelector(".items");
 
 // const calcButtons = document.getElementById("buttons");
 
@@ -9,9 +10,10 @@ size = 9;
 // are contained within the calculator parent container
 
 for (let i = 0; i <= size; i++){
-    const items = document.querySelector(".items");
     const nums = document.createElement("button");
     nums.textContent = i;
+    nums.style.width = "100px";
+    nums.style.height = "50px";
 
     
     items.appendChild(nums);
