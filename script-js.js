@@ -48,3 +48,5 @@ function operate(opp, a, b) {
 
 console.log(operate('/', 2, 5));
 
+// The next step is to create a dynamically created display bar
+
