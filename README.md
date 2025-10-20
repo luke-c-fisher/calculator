@@ -1,1 +1,2 @@
-The aim of this project is to build a dynamic calculator with JS, HTML, and CSS.
+# Calcultor 
+A dynamic calculator built with JS, HTML, and CSS.
