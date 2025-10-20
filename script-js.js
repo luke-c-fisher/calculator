@@ -1,3 +1,18 @@
+const calculator = document.querySelector(".parent-div");
+
+// const calcButtons = document.getElementById("buttons");
+
+size = 18
+
+for (let i = 0; i <= size; i++){
+    const divs = document.createElement("div")
+    
+    calculator.appendChild(divs)
+}
+
+
+
+
 const add = function(a, b) {
 	let sum = a + b; 
     return sum;
@@ -17,3 +32,5 @@ const multiply = function(arr) {
   let product = arr.reduce((a, b) => a * b);
   return product;
 };
+
+
