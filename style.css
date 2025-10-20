@@ -4,9 +4,6 @@
 }
 
 .container {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
     background-color: darkgrey;
     border-radius: 4px;
     margin: 0 auto;
@@ -14,13 +11,18 @@
     height: 500px;
 }
 
-.items {
-    flex: 1;
+.key-container {
+    display: flex;
+    align-items: flex-end;
     gap: 10px;
-    margin: 16px;
-    padding: 1rem 0;
-    background-color: lightgrey;
+    height: 250px;
+    border: 2px solid black;
 }
+
+.key-container#keys {
+    flex: 1;
+}
+
 
 
 /* The goal of the following CSS is to separate the numerical buttons from
