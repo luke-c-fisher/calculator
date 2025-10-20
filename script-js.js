@@ -1,17 +1,16 @@
 const add = function(a, b) {
 	let sum = a + b; 
-  return sum;
+    return sum;
 };
 
 const subtract = function(a, b) {
   let result = b - a;
   return result;
-	
 };
 
 const sum = function(arr) {
-  let sum = arr.reduce((a, b) => a + b, 0);
-	return sum;
+    let sum = arr.reduce((a, b) => a + b, 0);
+    return sum;
 };
 
 const multiply = function(arr) {
