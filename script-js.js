@@ -9,8 +9,12 @@ size = 9;
 // are contained within the calculator parent container
 
 for (let i = 0; i <= size; i++){
-    const nums = document.createElement("div");
+    const nums = document.createElement("button");
     nums.textContent = i;
+
+    nums.addEventListener("click", function(e){
+        e.target.style.backgroundColor = "dodgerblue";
+    });
     
     calculator.appendChild(nums);
 }
