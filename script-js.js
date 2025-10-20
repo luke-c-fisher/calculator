@@ -23,17 +23,28 @@ const multiply = function(a, b) {
   return product;
 };
 
-const divide = function() {
+const divide = function(a, b) {
   let quotient = b / a;
   return quotient;
 }
 
 
 function operate(opp, a, b) {
-  if (opp === +){
-    return add(a,b);
+  switch(opp){
+    case '+':
+      return add(a,b);
+      break;
+    case '-':
+      return subtract(a,b);
+      break;
+    case '*':
+      return multiply(a,b);
+      break;
+    case '/':
+      return divide(a,b);
+      break;
   }
 }
 
-console.log(operate(+, 2, 5));
+console.log(operate('/', 2, 5));
 
