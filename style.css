@@ -16,10 +16,16 @@
 .key-container {
     display: flex;
     flex: 1;
-    gap: 10px;
     height: 375px;
+    gap: 10px;
     border: 2px solid black;
 }
+
+
+
+
+
+
 
 
 
