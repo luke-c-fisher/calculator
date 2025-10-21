@@ -43,10 +43,10 @@ function operate(opp, a, b) {
     case '/':
       return divide(a,b);
       break;
-  }
+  };
 }
 
-console.log(operate('/', 2, 5));
+
 
 // The next step is to create a dynamically created display bar
 

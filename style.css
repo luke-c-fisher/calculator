@@ -5,7 +5,8 @@
 
 .container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: darkgrey;
     border-radius: 4px;
     margin: 0 auto;
@@ -13,11 +14,19 @@
     height: 500px;
 }
 
+.display {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    background-color: white;
+    margin: 10px;
+    height: 100px;
+}
+
 .key-container {
     display: flex;
     gap: 5px;
+    margin: 10px;
     flex-wrap: wrap;
-    height: 175px;
 }
 
 .keys {
@@ -25,8 +34,15 @@
 }
 
 .keys#clear {
+    flex: 1 1 230px;
     background-color: salmon;
     color: darkred;
+}
+
+.keys#delete {
+    flex: 1 1 230px;
+    background-color: deepskyblue;
+    color: darkblue;
 }
 
 
