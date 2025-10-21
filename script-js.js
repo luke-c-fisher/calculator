@@ -49,12 +49,13 @@ function operate(opp, a, b) {
 
 keys.forEach(key => {
   key.addEventListener("click", function(){
+    const userInput = document.createElement("div");
     const entries = document.createElement("div");
-    entries.textContent = this.textContent;
-    // entries.textContent = "";
+
+    userInput.value = this.textContent;
+    entries.textContent = userInput.value;
 
     display.appendChild(entries);
-    // console.log("clicked!",this.textContent);
   });
 });
 
