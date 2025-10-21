@@ -31,6 +31,7 @@
 
 .keys {
     padding: 1rem 2rem;
+    flex: 1 0 25%;
 }
 
 .keys#clear {
