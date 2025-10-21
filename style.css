@@ -34,13 +34,15 @@
     flex: 1 0 25%;
 }
 
-.keys#clear {
+#clear {
+    padding: 1rem 2rem;
     flex: 1 1 230px;
     background-color: salmon;
     color: darkred;
 }
 
-.keys#delete {
+#delete {
+    padding: 1rem 2rem;
     flex: 1 1 230px;
     background-color: deepskyblue;
     color: darkblue;

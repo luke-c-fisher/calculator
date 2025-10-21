@@ -46,6 +46,10 @@ function operate(opp, a, b) {
   };
 }
 
+function clearCalc(){
+  document.querySelector(".display").innerHTML = ""
+}
+
 
 keys.forEach(key => {
   key.addEventListener("click", function(){
@@ -53,7 +57,7 @@ keys.forEach(key => {
     const entries = document.createElement("div");
 
     userInput.value = this.textContent;
-    entries.textContent = userInput.value;
+    entries.textContent = userInput.value
 
     display.appendChild(entries);
   });
