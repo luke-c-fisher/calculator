@@ -4,7 +4,7 @@
 // are contained within the calculator parent container
 
 const display = document.querySelector(".display");
-const keys = document.querySelector(".keys");
+const keys = document.querySelectorAll(".keys");
 const container = document.querySelector(".container");
 
 
@@ -47,13 +47,21 @@ function operate(opp, a, b) {
 }
 
 
-keys.addEventListener('click', function(){
-  const itemValues = this.value;
-  this.value = ""
-  
-  display.textContent = itemValues;
-  container.appendChild(display);
+keys.forEach(key => {
+  key.addEventListener("click", function(){
+    const entries = document.createElement("div");
+    entries.textContent = this.textContent;
+    // entries.textContent = "";
+
+    display.appendChild(entries);
+    // console.log("clicked!",this.textContent);
+  });
 });
+
+
+
+
+
 
 
 
