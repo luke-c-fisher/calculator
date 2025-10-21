@@ -4,6 +4,7 @@
 // are contained within the calculator parent container
 
 const entries = document.querySelector(".display");
+const keys = document.querySelector(".keys");
 
 const add = function(a, b) {
 	let sum = a + b; 
@@ -42,6 +43,14 @@ function operate(opp, a, b) {
       break;
   };
 }
+
+keys.addEventListener('click', function(){
+  console.log(this.textContent);
+
+  // entries.appendChild();
+})
+
+
 
 
 
