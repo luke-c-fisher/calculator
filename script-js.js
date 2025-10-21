@@ -1,12 +1,9 @@
 
-
-// const calcButtons = document.getElementById("buttons");
-
-
 // The following code is meant to display buttons on a calculator
 // The idea is to create a set of dynamically created divs that 
 // are contained within the calculator parent container
 
+const entries = document.querySelector(".display");
 
 const add = function(a, b) {
 	let sum = a + b; 
@@ -43,10 +40,10 @@ function operate(opp, a, b) {
     case '/':
       return divide(a,b);
       break;
-  }
+  };
 }
 
-console.log(operate('/', 2, 5));
+
 
 // The next step is to create a dynamically created display bar
 

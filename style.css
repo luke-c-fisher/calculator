@@ -5,7 +5,8 @@
 
 .container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: darkgrey;
     border-radius: 4px;
     margin: 0 auto;
@@ -13,24 +14,37 @@
     height: 500px;
 }
 
-.keys {
-    flex: 1;
-    padding: 1rem 0;
+.display {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    background-color: white;
+    margin: 10px;
+    height: 100px;
+}
+
+.key-container {
+    display: flex;
+    gap: 5px;
+    margin: 10px;
     flex-wrap: wrap;
 }
 
-/* .key-container { */
-    /* display: flex; */
-    /* flex: 1; */
-    /* width: 150px;
-    height: 150px;
-    border: 2px solid black;
-} */
+.keys {
+    padding: 1rem 2rem;
+    flex: 1 0 25%;
+}
 
-/* .display-bar {
-    align-self: flex-start;
-} */
+.keys#clear {
+    flex: 1 1 230px;
+    background-color: salmon;
+    color: darkred;
+}
 
+.keys#delete {
+    flex: 1 1 230px;
+    background-color: deepskyblue;
+    color: darkblue;
+}
 
 
 
