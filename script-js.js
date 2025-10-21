@@ -3,8 +3,10 @@
 // The idea is to create a set of dynamically created divs that 
 // are contained within the calculator parent container
 
-const entries = document.querySelector(".display");
+const display = document.querySelector(".display");
 const keys = document.querySelector(".keys");
+const container = document.querySelector(".container");
+
 
 const add = function(a, b) {
 	let sum = a + b; 
@@ -44,8 +46,13 @@ function operate(opp, a, b) {
   };
 }
 
-keys.addEventListener('click', function(e){
-  console.log(e.target.value);
+
+keys.addEventListener('click', function(){
+  const itemValues = this.value;
+  this.value = ""
+  
+  display.textContent = itemValues;
+  container.appendChild(display);
 });
 
 
