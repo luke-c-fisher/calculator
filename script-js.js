@@ -44,11 +44,9 @@ function operate(opp, a, b) {
   };
 }
 
-keys.addEventListener('click', function(){
-  console.log(this.textContent);
-
-  // entries.appendChild();
-})
+keys.addEventListener('click', function(e){
+  console.log(e.target.value);
+});
 
 
 
