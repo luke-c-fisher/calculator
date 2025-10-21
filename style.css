@@ -16,13 +16,17 @@
 .key-container {
     display: flex;
     gap: 5px;
-    padding: 5px;
     flex-wrap: wrap;
     height: 175px;
 }
 
 .keys {
     padding: 1rem 2rem;
+}
+
+.keys#clear {
+    background-color: salmon;
+    color: darkred;
 }
 
 
