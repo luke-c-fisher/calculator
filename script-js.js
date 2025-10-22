@@ -32,16 +32,15 @@ const divide = function(a, b) {
 function operate(opp, a, b) {
   switch(opp){
     case '+':
-      return add(a,b);
-      break;
+      let sum = add(a,b);
     case '-':
-      return subtract(a,b);
-      break;
+      let difference = subtract(a,b);
     case '*':
-      return multiply(a,b);
-      break;
+      let product = multiply(a,b);
     case '/':
-      return divide(a,b);
+      let quotient = divide(a,b);
+    case '=':
+      
       break;
   };
 }
@@ -50,6 +49,7 @@ function clearCalc(){
   document.querySelector(".display").innerHTML = ""
 }
 
+// We have to find a way to use a and b in the operator function such that they appear once with their respective operator
 
 keys.forEach(key => {
   key.addEventListener("click", function(){
