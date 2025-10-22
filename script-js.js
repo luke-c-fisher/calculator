@@ -56,14 +56,10 @@ keys.forEach(key => {
   key.addEventListener("click", function(){
     const equals = document.getElementById("equal");
     const entries = document.createElement("div"); 
-    const nums = [a,b];
 
     entries.textContent = this.textContent;
-    nums = 
 
-    // equals.addEventListener("click", operate('', ))
-
-    // display.appendChild(entries);
+    display.appendChild(entries);
   });
 });
 
