@@ -5,7 +5,7 @@
 
 const display = document.querySelector(".display");
 const keys = document.querySelectorAll(".keys");
-const container = document.querySelector(".container");
+const equals = document.getElementById("equal");
 
 
 
@@ -15,8 +15,8 @@ const add = function(a, b) {
 };
 
 const subtract = function(a, b) {
-  let result = b - a;
-  return result;
+  let nums = b - a;
+  return nums;
 };
 
 const multiply = function(a, b) {
@@ -55,33 +55,32 @@ function clearCalc(){
 // Effectively, the second number can only be accessed once an operator is called. I need to create some kind of conditional 
 // to help me do this.
 
+// So far, I have the first and second number as global variables, called upon within the event listener. They simply append the 
+// values entered in the calculator. These are the main issues I am running into 
+// 1. How to fit the operator within the function, and is an operator variable necessary?
+// 2. What is necessary to distinguish between the first and second number?
+
+let firstNum = "";
+let secondNum = "";
+
+
 keys.forEach(key => {
   key.addEventListener("click", function(e){
-    const result = document.createElement("div");
-    let firstNum = "";
-    let secondNum = "";
-    let opp = "";
+    const nums = document.createElement("div");
 
-    opp = (opp === "+" || opp === "-" || opp === "*" || opp === "/" ) ? console.log(opp) : "error";
+    firstNum += e.target.textContent;
+    secondNum += e.target.textContent;
 
-    if (opp === ""){
-      firstNum = e.target.textContent;
-      console.log(firstNum);
-    } else {
-      secondNum = e.target.textContent;
-      console.log(secondNum);
-    }
+    nums.textContent = firstNum;
+    nums.textContent = secondNum;
+    
+    display.appendChild(nums);
 
-    
-    
-    
-    // entries = return operate(opp, firstNum, secondNum);
-    // console.log(entries);
-    // console.log(firstNum);
-    
-    // display.appendChild(entries);
   });
 });
+
+equal.addEventListener("click", operate())
+
 
 
 
