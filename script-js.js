@@ -52,21 +52,31 @@ function clearCalc(){
 }
 
 // We have to find a way to store a and b in the function below and use operate on them when the "=" button is called
-
-
+// Effectively, the second number can only be accessed once an operator is called. I need to create some kind of conditional 
+// to help me do this.
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
-    const entries = document.createElement("div");
+    const result = document.createElement("div");
     let firstNum = "";
     let secondNum = "";
     let opp = "";
 
-    firstNum = e.target.textContent
-    console.log(firstNum);
+    opp = (opp === "+" || opp === "-" || opp === "*" || opp === "/" ) ? console.log(opp) : "error";
 
-    entries = return operate()
-    console.log(entries);
+    if (opp === ""){
+      firstNum = e.target.textContent;
+      console.log(firstNum);
+    } else {
+      secondNum = e.target.textContent;
+      console.log(secondNum);
+    }
+
+    
+    
+    
+    // entries = return operate(opp, firstNum, secondNum);
+    // console.log(entries);
     // console.log(firstNum);
     
     // display.appendChild(entries);
