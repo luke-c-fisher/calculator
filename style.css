@@ -48,6 +48,10 @@
     color: darkblue;
 }
 
+#equal {
+    flex: 0 1 230px;
+}
+
 
 
 

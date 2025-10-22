@@ -32,15 +32,16 @@ const divide = function(a, b) {
 function operate(opp, a, b) {
   switch(opp){
     case '+':
-      let sum = add(a,b);
+      return add(a,b);
+      break;
     case '-':
-      let difference = subtract(a,b);
+      return = subtract(a,b);
+      break;
     case '*':
-      let product = multiply(a,b);
+      return multiply(a,b);
+      break;
     case '/':
-      let quotient = divide(a,b);
-    case '=':
-      
+      return divide(a,b);
       break;
   };
 }
