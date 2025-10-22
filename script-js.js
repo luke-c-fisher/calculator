@@ -35,7 +35,7 @@ function operate(opp, a, b) {
       return add(a,b);
       break;
     case '-':
-      return = subtract(a,b);
+      return subtract(a,b);
       break;
     case '*':
       return multiply(a,b);
@@ -50,15 +50,18 @@ function clearCalc(){
   document.querySelector(".display").innerHTML = ""
 }
 
-// We have to find a way to use a and b in the operator function such that they appear once with their respective operator
+// We have to find a way to store a and b in the function below and use operate on them when the "=" button is called
 
 keys.forEach(key => {
   key.addEventListener("click", function(){
-    const userInput = document.createElement("div");
-    const entries = document.createElement("div");
+    const equals = document.getElementById("equal");
+    const nums = document.createElement("div");
+    const entries = document.createElement("div"); 
 
-    userInput.value = this.textContent;
-    entries.textContent = userInput.value
+    // nums.textContent = this.textContent;
+    entries.textContent = this.textContent;
+
+    // equals.addEventListener("click", operate('', ))
 
     display.appendChild(entries);
   });
