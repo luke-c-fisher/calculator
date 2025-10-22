@@ -8,6 +8,7 @@ const keys = document.querySelectorAll(".keys");
 const container = document.querySelector(".container");
 
 
+
 const add = function(a, b) {
 	let sum = a + b; 
     return sum;
@@ -52,14 +53,23 @@ function clearCalc(){
 
 // We have to find a way to store a and b in the function below and use operate on them when the "=" button is called
 
+
+
 keys.forEach(key => {
-  key.addEventListener("click", function(){
-    const equals = document.getElementById("equal");
-    const entries = document.createElement("div"); 
+  key.addEventListener("click", function(e){
+    const entries = document.createElement("div");
+    let firstNum = "";
+    let secondNum = "";
+    let opp = "";
 
-    entries.textContent = this.textContent;
+    firstNum = e.target.textContent
+    console.log(firstNum);
 
-    display.appendChild(entries);
+    entries = return operate()
+    console.log(entries);
+    // console.log(firstNum);
+    
+    // display.appendChild(entries);
   });
 });
 
