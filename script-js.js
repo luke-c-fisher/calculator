@@ -55,15 +55,15 @@ function clearCalc(){
 keys.forEach(key => {
   key.addEventListener("click", function(){
     const equals = document.getElementById("equal");
-    const nums = document.createElement("div");
     const entries = document.createElement("div"); 
+    const nums = [a,b];
 
-    // nums.textContent = this.textContent;
     entries.textContent = this.textContent;
+    nums = 
 
     // equals.addEventListener("click", operate('', ))
 
-    display.appendChild(entries);
+    // display.appendChild(entries);
   });
 });
 
