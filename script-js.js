@@ -69,17 +69,16 @@ const nums = document.createElement("div");
 keys.forEach(key => {
   key.addEventListener("click", function(e){
 
-    // if (opp == ""){
-      // firstNum = e.target.textContent;
-      // console.log(firstNum);
-    // } else {
-      // secondNum += e.target.textContent;
-      // console.log(firstNum);
-    // }
+
+    firstNum = e.target.textContent;
+    console.log(firstNum);
+
+    secondNum += e.target.textContent;
+    console.log(firstNum);
   
 
     nums.textContent += firstNum;
-    // nums.textContent = secondNum;
+    nums.textContent = secondNum;
 
     display.appendChild(nums);
   });
