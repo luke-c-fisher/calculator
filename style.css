@@ -35,7 +35,7 @@
     flex: 1 0 25%;
 }
 
-#operator {
+.operator {
     cursor: pointer;
     padding: 1rem 2rem;
     flex: 1 0 125px;
