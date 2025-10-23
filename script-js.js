@@ -64,16 +64,22 @@ let firstNum = "";
 let secondNum = "";
 let opp = ""; 
 
+const nums = document.createElement("div");
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
-    const nums = document.createElement("div");
 
-    firstNum += e.target.textContent;
-    secondNum += e.target.textContent;
+    // if (opp == ""){
+      // firstNum = e.target.textContent;
+      // console.log(firstNum);
+    // } else {
+      // secondNum += e.target.textContent;
+      // console.log(firstNum);
+    // }
+  
 
-    nums.textContent = firstNum;
-    nums.textContent = secondNum;
+    nums.textContent += firstNum;
+    // nums.textContent = secondNum;
 
     display.appendChild(nums);
   });
