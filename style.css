@@ -35,6 +35,12 @@
     flex: 1 0 25%;
 }
 
+#operator {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    flex: 1 0 125px;
+}
+
 #clear {
     padding: 1rem 2rem;
     flex: 1 1 230px;
@@ -50,7 +56,8 @@
 }
 
 #equal {
-    flex: 0 0 230px;
+    cursor: pointer;
+    flex: 1 0 150px;
 }
 
 

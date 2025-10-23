@@ -6,6 +6,7 @@
 const display = document.querySelector(".display");
 const keys = document.querySelectorAll(".keys");
 const equals = document.getElementById("equal");
+const operators = document.getElementById("operator");
 
 
 
@@ -47,10 +48,6 @@ function operate(opp, a, b) {
   };
 }
 
-function clearCalc(){
-  document.querySelector(".display").innerHTML = ""
-}
-
 // We have to find a way to store a and b in the function below and use operate on them when the "=" button is called
 // Effectively, the second number can only be accessed once an operator is called. I need to create some kind of conditional 
 // to help me do this.
@@ -64,30 +61,42 @@ let firstNum = "";
 let secondNum = "";
 let opp = ""; 
 
+
 const nums = document.createElement("div");
+
+function clearCalc(){
+  document.querySelector(".display").innerHTML = ""
+}
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
 
-
-    firstNum = e.target.textContent;
-    console.log(firstNum);
-
-    secondNum += e.target.textContent;
-    console.log(firstNum);
+    if (opp == ""){
+      firstNum = e.target.textContent;
+      console.log(firstNum);
+    } else {
+      secondNum += e.target.textContent;
+      console.log(secondNum);
+    }
   
 
-    nums.textContent += firstNum;
-    nums.textContent = secondNum;
+    // nums.textContent += firstNum;
+    // nums.textContent += secondNum;
 
-    display.appendChild(nums);
+    // display.appendChild(nums);
   });
 });
 
-equal.addEventListener("click", function(e){
-  
+equals.addEventListener("click", function(){
 
-})
+  switch (opp){
+    case '+':
+
+  }
+  
+  this.operate(opp, firstNum, secondNum);
+  
+});
 
 
 
