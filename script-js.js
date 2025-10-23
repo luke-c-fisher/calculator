@@ -62,6 +62,7 @@ function clearCalc(){
 
 let firstNum = "";
 let secondNum = "";
+let opp = ""; 
 
 
 keys.forEach(key => {
@@ -73,13 +74,15 @@ keys.forEach(key => {
 
     nums.textContent = firstNum;
     nums.textContent = secondNum;
-    
-    display.appendChild(nums);
 
+    display.appendChild(nums);
   });
 });
 
-equal.addEventListener("click", operate())
+equal.addEventListener("click", function(e){
+  
+
+})
 
 
 
