@@ -31,17 +31,20 @@
 
 .keys {
     cursor: pointer;
+    border-radius: 10px;
     padding: 1rem 2rem;
     flex: 1 0 25%;
 }
 
 .operator {
+    border-radius: 10px;
     cursor: pointer;
     padding: 1rem 2rem;
     flex: 1 0 125px;
 }
 
 #clear {
+    border-radius: 10px;
     padding: 1rem 2rem;
     flex: 1 1 230px;
     background-color: salmon;
@@ -49,6 +52,7 @@
 }
 
 #delete {
+    border-radius: 10px;
     padding: 1rem 2rem;
     flex: 1 1 230px;
     background-color: deepskyblue;
@@ -56,6 +60,7 @@
 }
 
 #equal {
+    border-radius: 10px;
     cursor: pointer;
     flex: 1 0 150px;
 }

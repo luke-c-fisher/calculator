@@ -6,10 +6,7 @@
 const display = document.querySelector(".display");
 const keys = document.querySelectorAll(".keys");
 const operators = document.querySelectorAll(".operator");
-
 const equals = document.getElementById("equal");
-
-
 
 
 const add = function(a, b) {
@@ -72,7 +69,9 @@ let result = document.createElement("div");
 
 
 function clearCalc(){
-  document.querySelector(".display").innerHTML = ""
+  display.textContent = "";
+  firstNum = "";
+  secondNum = "";
 }
 
 keys.forEach(key => {
@@ -87,10 +86,6 @@ keys.forEach(key => {
       twoNum.textContent = secondNum;
       console.log(secondNum);
     }
-  
-
-    // numOne.textContent = firstNum;
-    // numTwo.textContent = secondNum;
 
     display.appendChild(oneNum);
     display.appendChild(twoNum);
@@ -99,10 +94,10 @@ keys.forEach(key => {
 
 operators.forEach(op => {
   op.addEventListener("click", function(e){
-    opp = e.target.textContent;
+    opp += e.target.textContent;
     console.log(opp);
 
-    operator.textContent += opp; 
+    operator.textContent = opp; 
 
     display.appendChild(operator);
   });
@@ -115,20 +110,11 @@ equals.addEventListener("click", function(){
   
   evaluate = operate(opp, numOne, numTwo);
   result.textContent = evaluate;
-  // console.log(evaluate);
 
   display.appendChild(result);
+
+  firstNum = result;
+  secondNum = "";
+  result = "";
 });
-
-
-
-
-
-
-
-
-
-
-
-// The next step is to create a dynamically created display bar
 
