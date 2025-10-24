@@ -35,16 +35,16 @@ function operate(opp, a, b) {
   switch(opp){
     case '+':
       return add(a,b);
-      break;
+
     case '-':
       return subtract(a,b);
-      break;
+
     case '*':
       return multiply(a,b);
-      break;
+
     case '/':
       return divide(a,b);
-      break;
+
   };
 }
 
@@ -60,45 +60,43 @@ function operate(opp, a, b) {
 let firstNum = "";
 let secondNum = "";
 let opp = ""; 
-let evaluate = "";
+let evaluate;
 
 
-const oneNum = document.createElement("div");
-const twoNum = document.createElement("div");
-const operator = document.createElement("div");
 const result = document.createElement("div");
 
+function updateDisplay(){
 
-clear.addEventListener("click", function(){
-  document.querySelector(".display").style.display = none;
-})
+  if (result.textContent == ""){
+    display.textContent = `${firstNum}${opp}${secondNum}`;
+  } else {
+    display.textContent = result.textContent;
+  }
+  
+  clear.addEventListener("click", function(){
+    display.value = "";
+  });
+}
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
 
     if (opp == ""){
-      firstNum = e.target.textContent;
-      oneNum.textContent += firstNum;
+      firstNum += e.target.textContent;
       console.log(firstNum);
     } else {
-      secondNum = e.target.textContent;
-      twoNum.textContent += secondNum;
+      secondNum += e.target.textContent;
       console.log(secondNum);
     }
-
-    display.appendChild(oneNum);
-    display.appendChild(twoNum);
+    updateDisplay();
   });
 });
 
 operators.forEach(op => {
   op.addEventListener("click", function(e){
-    opp = e.target.textContent;
+    opp += e.target.textContent;
     console.log(opp);
-
-    operator.textContent += opp; 
-
-    display.appendChild(operator);
+    updateDisplay();
   });
 });
 
@@ -110,10 +108,6 @@ equals.addEventListener("click", function(){
   evaluate = operate(opp, numOne, numTwo);
   result.textContent = evaluate;
 
-  display.appendChild(result);
-
-  firstNum = result;
-  secondNum = "";
-  result = "";
+  updateDisplay();
 });
 

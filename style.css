@@ -44,6 +44,7 @@
 }
 
 #clear {
+    cursor: pointer;
     border-radius: 10px;
     padding: 1rem 2rem;
     flex: 1 1 230px;
@@ -52,6 +53,7 @@
 }
 
 #delete {
+    cursor: pointer;
     border-radius: 10px;
     padding: 1rem 2rem;
     flex: 1 1 230px;
