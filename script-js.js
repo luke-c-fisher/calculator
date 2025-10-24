@@ -7,6 +7,7 @@ const display = document.querySelector(".display");
 const keys = document.querySelectorAll(".keys");
 const operators = document.querySelectorAll(".operator");
 const equals = document.getElementById("equal");
+const clear = document.getElementById("clear");
 
 
 const add = function(a, b) {
@@ -65,25 +66,23 @@ let evaluate = "";
 const oneNum = document.createElement("div");
 const twoNum = document.createElement("div");
 const operator = document.createElement("div");
-let result = document.createElement("div");
+const result = document.createElement("div");
 
 
-function clearCalc(){
-  display.textContent = "";
-  firstNum = "";
-  secondNum = "";
-}
+clear.addEventListener("click", function(){
+  document.querySelector(".display").style.display = none;
+})
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
 
     if (opp == ""){
-      firstNum += e.target.textContent;
-      oneNum.textContent = firstNum;
+      firstNum = e.target.textContent;
+      oneNum.textContent += firstNum;
       console.log(firstNum);
     } else {
-      secondNum += e.target.textContent;
-      twoNum.textContent = secondNum;
+      secondNum = e.target.textContent;
+      twoNum.textContent += secondNum;
       console.log(secondNum);
     }
 
@@ -94,10 +93,10 @@ keys.forEach(key => {
 
 operators.forEach(op => {
   op.addEventListener("click", function(e){
-    opp += e.target.textContent;
+    opp = e.target.textContent;
     console.log(opp);
 
-    operator.textContent = opp; 
+    operator.textContent += opp; 
 
     display.appendChild(operator);
   });
