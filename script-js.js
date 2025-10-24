@@ -70,11 +70,19 @@ function updateDisplay(){
   if (result.textContent == ""){
     display.textContent = `${firstNum}${opp}${secondNum}`;
   } else {
+    opp = "";
+    secondNum = "";
+    
     display.textContent = result.textContent;
+    firstNum = result.textContent;
+    display.textContent = `${firstNum}${opp}${secondNum}`;
   }
   
   clear.addEventListener("click", function(){
-    display.value = "";
+    display.textContent = "";
+    firstNum = "";
+    secondNum = "";
+    result.textContent = "";
   });
 }
 
@@ -83,10 +91,8 @@ keys.forEach(key => {
 
     if (opp == ""){
       firstNum += e.target.textContent;
-      console.log(firstNum);
     } else {
       secondNum += e.target.textContent;
-      console.log(secondNum);
     }
     updateDisplay();
   });
@@ -95,7 +101,6 @@ keys.forEach(key => {
 operators.forEach(op => {
   op.addEventListener("click", function(e){
     opp += e.target.textContent;
-    console.log(opp);
     updateDisplay();
   });
 });
