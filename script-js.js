@@ -68,6 +68,7 @@ let evaluate = "";
 const oneNum = document.createElement("div");
 const twoNum = document.createElement("div");
 const operator = document.createElement("div");
+let result = document.createElement("div");
 
 
 function clearCalc(){
@@ -108,7 +109,6 @@ operators.forEach(op => {
 });
 
 equals.addEventListener("click", function(){
-  let result = document.appendChild("div");
 
   let numOne = parseInt(firstNum);
   let numTwo = parseInt(secondNum);
