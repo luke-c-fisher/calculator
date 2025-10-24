@@ -62,14 +62,13 @@ function operate(opp, a, b) {
 let firstNum = "";
 let secondNum = "";
 let opp = ""; 
-let result = "";
+let evaluate = "";
 
 
-// const numOne = document.createElement("div");
+const oneNum = document.createElement("div");
+const twoNum = document.createElement("div");
 const operator = document.createElement("div");
-// const numTwo = document.createElement("div");
 
-// const numTwo = document.createElement("div");
 
 function clearCalc(){
   document.querySelector(".display").innerHTML = ""
@@ -80,18 +79,20 @@ keys.forEach(key => {
 
     if (opp == ""){
       firstNum += e.target.textContent;
+      oneNum.textContent = firstNum;
       console.log(firstNum);
     } else {
       secondNum += e.target.textContent;
+      twoNum.textContent = secondNum;
       console.log(secondNum);
     }
   
 
-    // numOne.textContent += firstNum;
-    // numTwo.textContent += secondNum;
+    // numOne.textContent = firstNum;
+    // numTwo.textContent = secondNum;
 
-    // display.appendChild(numOne);
-    // display.appendChild(numTwo);
+    display.appendChild(oneNum);
+    display.appendChild(twoNum);
   });
 });
 
@@ -100,20 +101,23 @@ operators.forEach(op => {
     opp = e.target.textContent;
     console.log(opp);
 
-    // operator.textContent += opp; 
+    operator.textContent += opp; 
 
-    // display.appendChild(operator);
+    display.appendChild(operator);
   });
 });
 
 equals.addEventListener("click", function(){
+  let result = document.appendChild("div");
 
   let numOne = parseInt(firstNum);
   let numTwo = parseInt(secondNum);
   
-  result = operate(opp, numOne, numTwo);
-  console.log(result);
+  evaluate = operate(opp, numOne, numTwo);
+  result.textContent = evaluate;
+  // console.log(evaluate);
 
+  display.appendChild(result);
 });
 
 
