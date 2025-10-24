@@ -60,39 +60,44 @@ function operate(opp, a, b) {
 let firstNum = "";
 let secondNum = "";
 let opp = ""; 
-let evaluate;
+let evaluate = "";
 
 
 const result = document.createElement("div");
 
 function updateDisplay(){
 
-  if (result.textContent == ""){
+  if (evaluate == ""){
     display.textContent = `${firstNum}${opp}${secondNum}`;
   } else {
-    opp = "";
-    secondNum = "";
-    
-    display.textContent = result.textContent;
-    firstNum = result.textContent;
-    display.textContent = `${firstNum}${opp}${secondNum}`;
-  }
+    display.textContent = evaluate;
+    firstNum = evaluate;
+   }
   
+
+  };
+
   clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
     secondNum = "";
-    result.textContent = "";
+    evaluate = "";
   });
-}
+
 
 keys.forEach(key => {
   key.addEventListener("click", function(e){
 
     if (opp == ""){
-      firstNum += e.target.textContent;
+      firstNum = e.target.textContent;
     } else {
       secondNum += e.target.textContent;
+    }
+    
+    if (firstNum == evaluate){
+      secondNum = '';
+      secondNum += e.target.textContent;
+      console.log(secondNum);
     }
     updateDisplay();
   });
@@ -101,6 +106,12 @@ keys.forEach(key => {
 operators.forEach(op => {
   op.addEventListener("click", function(e){
     opp += e.target.textContent;
+
+    if (firstNum == evaluate){
+      opp = '';
+      opp += e.target.textContent;
+      console.log(opp);
+    }
     updateDisplay();
   });
 });
@@ -111,7 +122,7 @@ equals.addEventListener("click", function(){
   let numTwo = parseInt(secondNum);
   
   evaluate = operate(opp, numOne, numTwo);
-  result.textContent = evaluate;
+  // result.textContent = evaluate;
 
   updateDisplay();
 });
