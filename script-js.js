@@ -75,8 +75,12 @@ function updateDisplay(){
    }
   
    clear.addEventListener("click", function(){
+    display.textContent = "";
+    firstNum = "";
+    secondNum = "";
+    opp = ""; 
     evaluate = "";
-  });
+    });
 
    display.appendChild(result);
 };
