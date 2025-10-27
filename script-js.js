@@ -73,16 +73,18 @@ function updateDisplay(){
     display.textContent = evaluate;
     firstNum = evaluate;
    }
-  
 
-  };
-
-  clear.addEventListener("click", function(){
+    clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
     secondNum = "";
     evaluate = "";
   });
+  
+
+  };
+
+
 
 
 keys.forEach(key => {
