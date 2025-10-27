@@ -58,7 +58,6 @@ function operate(opp, a, b) {
 // 2. What is necessary to distinguish between the first and second number?
 
 
-
 let firstNum = "";
 let secondNum = "";
 let opp = ""; 
@@ -86,7 +85,7 @@ function updateDisplay(){
   clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
-    secondNum = "";
+    // secondNum = "";
     opp = ""; 
     evaluate = "";
   });
@@ -110,18 +109,22 @@ keys.forEach(key => {
 
 operators.forEach(op => {
   op.addEventListener("click", function(e){
-    opp = e.target.textContent;
 
-    if (evaluate != 0){
+    if (opp != "" && secondNum != ""){
       newOpp = e.target.textContent;
+      let numOne = parseInt(firstNum);
+      let numTwo = parseInt(secondNum);
+      evaluate = operate(newOpp, numOne, numTwo);
+      secondNum = "";
     }
-    
+
+    opp = e.target.textContent;
     updateDisplay();
   });
 });
 
 equals.addEventListener("click", function(){
-  if (secondNum != ""){
+  if (opp != "" && secondNum != ""){
     let numOne = parseInt(firstNum);
     let numTwo = parseInt(secondNum);
     evaluate = operate(opp, numOne, numTwo);
