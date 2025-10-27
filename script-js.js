@@ -63,6 +63,7 @@ let firstNum = "";
 let secondNum = "";
 let opp = ""; 
 let evaluate = "";
+let newOpp = "";
 
 // I will approach the issue of stringing together operations using two methods:
 // 1. creating a switch-case statement where I denote the logic for an additional operation and display it.
@@ -77,21 +78,17 @@ function updateDisplay(){
   } else {
     result.textContent = evaluate;
     firstNum = evaluate;
+    opp = newOpp;
+    secondNum = "";
+  }
 
-    if (firstNum == evaluate) {
-      opp = "";
-      secondNum = "";
-    }
-    }
-
-
-   clear.addEventListener("click", function(){
+  clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
     secondNum = "";
     opp = ""; 
     evaluate = "";
-    });
+  });
 
    display.appendChild(result);
 };
@@ -104,13 +101,8 @@ keys.forEach(key => {
       firstNum += e.target.textContent;
     } else {
       secondNum += e.target.textContent;
+      console.log(secondNum);
     }
-    
-    // if (firstNum == evaluate){
-    //   secondNum = "";
-    //   secondNum += e.target.textContent;
-    //   console.log(secondNum);
-    // }
     updateDisplay();
   });
 });
@@ -119,11 +111,11 @@ operators.forEach(op => {
   op.addEventListener("click", function(e){
     opp += e.target.textContent;
 
-    // if (firstNum == evaluate){
-    //   opp = "";
-    //   opp += e.target.textContent;
-    //   console.log(opp);
-    // }
+    if (evaluate != 0){
+      newOpp += e.target.textContent;
+      console.log(newOpp);
+    }
+
     updateDisplay();
   });
 });
@@ -137,4 +129,5 @@ equals.addEventListener("click", function(){
 
   updateDisplay();
 });
+
 
