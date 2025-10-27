@@ -4,7 +4,6 @@
 }
 
 .container {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +40,7 @@
     border-radius: 10px;
     cursor: pointer;
     padding: 1rem 2rem;
-    flex: 1 0 125px;
+    flex: 1 0 100px;
 }
 
 #clear {

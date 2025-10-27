@@ -68,16 +68,19 @@ const result = document.createElement("div");
 function updateDisplay(){
 
   if (evaluate == ""){
-    display.textContent = `${firstNum}${opp}${secondNum}`;
+    result.textContent = `${firstNum}${opp}${secondNum}`;
   } else {
-    display.textContent = evaluate;
+    result.textContent = evaluate;
     firstNum = evaluate;
    }
+  
+   clear.addEventListener("click", function(){
+    evaluate = "";
+  });
+
+   display.appendChild(result);
 };
 
-    clear.addEventListener("click", function(){
-    display.textContent = "";
-    });
 
 
 
@@ -119,7 +122,6 @@ equals.addEventListener("click", function(){
   let numTwo = parseInt(secondNum);
   
   evaluate = operate(opp, numOne, numTwo);
-  // result.textContent = evaluate;
 
   updateDisplay();
 });
