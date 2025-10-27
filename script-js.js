@@ -16,7 +16,7 @@ const add = function(a, b) {
 };
 
 const subtract = function(a, b) {
-  let nums = b - a;
+  let nums = a - b;
   return nums;
 };
 
