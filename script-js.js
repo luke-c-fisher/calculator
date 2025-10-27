@@ -77,16 +77,14 @@ function updateDisplay(){
   } else {
     result.textContent = evaluate;
     firstNum = evaluate;
-    opp = "";
-    secondNum = "";
 
-    switch(opp) {
-      case '+':
-
+    if (firstNum == evaluate) {
+      opp = "";
+      secondNum = "";
+    }
     }
 
-   }
-  
+
    clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
@@ -108,11 +106,11 @@ keys.forEach(key => {
       secondNum += e.target.textContent;
     }
     
-    if (firstNum == evaluate){
-      secondNum = "";
-      secondNum += e.target.textContent;
-      console.log(secondNum);
-    }
+    // if (firstNum == evaluate){
+    //   secondNum = "";
+    //   secondNum += e.target.textContent;
+    //   console.log(secondNum);
+    // }
     updateDisplay();
   });
 });
@@ -121,11 +119,11 @@ operators.forEach(op => {
   op.addEventListener("click", function(e){
     opp += e.target.textContent;
 
-    if (firstNum == evaluate){
-      opp = "";
-      opp += e.target.textContent;
-      console.log(opp);
-    }
+    // if (firstNum == evaluate){
+    //   opp = "";
+    //   opp += e.target.textContent;
+    //   console.log(opp);
+    // }
     updateDisplay();
   });
 });
