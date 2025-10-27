@@ -81,6 +81,7 @@ function updateDisplay(){
     opp = newOpp;
     secondNum = "";
   }
+  display.textContent = result.textContent;
 
   clear.addEventListener("click", function(){
     display.textContent = "";
@@ -90,7 +91,7 @@ function updateDisplay(){
     evaluate = "";
   });
 
-   display.appendChild(result);
+  //  display.appendChild(result);
 };
 
 
@@ -109,25 +110,24 @@ keys.forEach(key => {
 
 operators.forEach(op => {
   op.addEventListener("click", function(e){
-    opp += e.target.textContent;
+    opp = e.target.textContent;
 
     if (evaluate != 0){
-      newOpp += e.target.textContent;
-      console.log(newOpp);
+      newOpp = e.target.textContent;
     }
-
+    
     updateDisplay();
   });
 });
 
 equals.addEventListener("click", function(){
+  if (secondNum != ""){
+    let numOne = parseInt(firstNum);
+    let numTwo = parseInt(secondNum);
+    evaluate = operate(opp, numOne, numTwo);
+    updateDisplay();
+  }
 
-  let numOne = parseInt(firstNum);
-  let numTwo = parseInt(secondNum);
-  
-  evaluate = operate(opp, numOne, numTwo);
-
-  updateDisplay();
 });
 
 
