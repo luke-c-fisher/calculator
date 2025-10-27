@@ -57,11 +57,16 @@ function operate(opp, a, b) {
 // 1. How to fit the operator within the function, and is an operator variable necessary?
 // 2. What is necessary to distinguish between the first and second number?
 
+
+
 let firstNum = "";
 let secondNum = "";
 let opp = ""; 
 let evaluate = "";
 
+// I will approach the issue of stringing together operations using two methods:
+// 1. creating a switch-case statement where I denote the logic for an additional operation and display it.
+// 2. create a seperate function that has a similar logic to the first method.
 
 const result = document.createElement("div");
 
@@ -72,8 +77,14 @@ function updateDisplay(){
   } else {
     result.textContent = evaluate;
     firstNum = evaluate;
+    opp = "";
+    secondNum = "";
 
-    // console.log(evaluate);
+    switch(opp) {
+      case '+':
+
+    }
+
    }
   
    clear.addEventListener("click", function(){
