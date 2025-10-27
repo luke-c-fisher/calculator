@@ -26,7 +26,7 @@ const multiply = function(a, b) {
 };
 
 const divide = function(a, b) {
-  let quotient = b / a;
+  let quotient = a / b;
   return quotient;
 }
 
@@ -73,16 +73,11 @@ function updateDisplay(){
     display.textContent = evaluate;
     firstNum = evaluate;
    }
+};
 
     clear.addEventListener("click", function(){
     display.textContent = "";
-    firstNum = "";
-    secondNum = "";
-    evaluate = "";
-  });
-  
-
-  };
+    });
 
 
 
@@ -91,7 +86,7 @@ keys.forEach(key => {
   key.addEventListener("click", function(e){
 
     if (opp == ""){
-      firstNum = e.target.textContent;
+      firstNum += e.target.textContent;
     } else {
       secondNum += e.target.textContent;
     }
