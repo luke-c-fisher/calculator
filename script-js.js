@@ -8,6 +8,7 @@ const keys = document.querySelectorAll(".keys");
 const operators = document.querySelectorAll(".operator");
 const equals = document.getElementById("equal");
 const clear = document.getElementById("clear");
+const deleteBtn = document.getElementById("delete");
 
 
 const add = function(a, b) {
@@ -77,8 +78,6 @@ function updateDisplay(){
   } else {
     result.textContent = evaluate;
     firstNum = evaluate;
-    // opp = newOpp;
-    // secondNum = "";
   }
   display.textContent = result.textContent;
 
@@ -89,8 +88,6 @@ function updateDisplay(){
     opp = ""; 
     evaluate = "";
   });
-
-  //  display.appendChild(result);
 };
 
 
