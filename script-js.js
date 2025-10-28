@@ -98,7 +98,6 @@ keys.forEach(key => {
       firstNum += e.target.textContent;
     } else {
       secondNum += e.target.textContent;
-      console.log(secondNum);
     }
     updateDisplay();
   });
@@ -112,7 +111,6 @@ operators.forEach(op => {
   op.addEventListener("click", function(e){
 
     opp = e.target.textContent;
-    console.log(opp);
     updateDisplay();
   });
 });
