@@ -4,11 +4,10 @@
 // are contained within the calculator parent container
 
 const display = document.querySelector(".display");
-const keys = document.querySelectorAll(".keys");
+const keys = document.querySelectorAll(".keys, .decimal");
 const operators = document.querySelectorAll(".operator");
 const equals = document.getElementById("equal");
 const clear = document.getElementById("clear");
-const deleteBtn = document.getElementById("delete");
 
 
 const add = function(a, b) {
@@ -69,6 +68,11 @@ let newOpp = "";
 // 1. creating a switch-case statement where I denote the logic for an additional operation and display it.
 // 2. create a seperate function that has a similar logic to the first method.
 
+// decimal.addEventListener("click", function(e){
+//   display.textContent = e.target.textContent;
+// })
+
+
 const result = document.createElement("div");
 
 function updateDisplay(){
@@ -117,12 +121,13 @@ operators.forEach(op => {
 
 equals.addEventListener("click", function(){
   if (opp != "" && secondNum != ""){
-    let numOne = parseInt(firstNum);
-    let numTwo = parseInt(secondNum);
+    let numOne = parseFloat(firstNum);
+    let numTwo = parseFloat(secondNum);
     evaluate = operate(opp, numOne, numTwo);
+    evaluate = parseFloat(evaluate).toFixed(2);
     secondNum = "";
+    
     updateDisplay();
   }
 });
-
 
