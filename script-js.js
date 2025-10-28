@@ -77,15 +77,15 @@ function updateDisplay(){
   } else {
     result.textContent = evaluate;
     firstNum = evaluate;
-    opp = newOpp;
-    secondNum = "";
+    // opp = newOpp;
+    // secondNum = "";
   }
   display.textContent = result.textContent;
 
   clear.addEventListener("click", function(){
     display.textContent = "";
     firstNum = "";
-    // secondNum = "";
+    secondNum = "";
     opp = ""; 
     evaluate = "";
   });
@@ -107,18 +107,15 @@ keys.forEach(key => {
   });
 });
 
+// Right now, the calculator is able to automatically update 'evaluate' with the previous entry for numTwo (i.e., numOne + numTwo = evaluate =>
+  // opp + numTwo) The operator is accumulating evaluate with each press of an operator, which we don't want. Instead, evaluate should only 
+  // change with the equals sign. 
+
 operators.forEach(op => {
   op.addEventListener("click", function(e){
 
-    if (opp != "" && secondNum != ""){
-      newOpp = e.target.textContent;
-      let numOne = parseInt(firstNum);
-      let numTwo = parseInt(secondNum);
-      evaluate = operate(newOpp, numOne, numTwo);
-      secondNum = "";
-    }
-
     opp = e.target.textContent;
+    console.log(opp);
     updateDisplay();
   });
 });
@@ -128,9 +125,9 @@ equals.addEventListener("click", function(){
     let numOne = parseInt(firstNum);
     let numTwo = parseInt(secondNum);
     evaluate = operate(opp, numOne, numTwo);
+    secondNum = "";
     updateDisplay();
   }
-
 });
 
 
